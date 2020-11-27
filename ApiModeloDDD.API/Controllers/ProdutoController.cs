@@ -16,9 +16,8 @@ namespace ApiModeloDDD.API.Controllers
         }
 
         /// <summary>
-        /// Realiza uma importação.
+        /// Realiza a importação do produto.
         /// </summary>
-        /// <param name="importar">Modelo de importação.</param>
         /// <response code="200">Importação realizada com sucesso.</response>
         /// <response code="400">O modelo da importação enviado é inválido.</response>
         [HttpPost]
@@ -36,7 +35,7 @@ namespace ApiModeloDDD.API.Controllers
         }
 
         /// <summary>
-        /// Obter todas as importações.
+        /// Retorna uma lista com todos os produtos cadastrados.
         /// </summary>
         /// <response code="200">A lista de importações foi obtida com sucesso.</response>
         /// <response code="400">Ocorreu um erro ao obter a lista de importações.</response>
@@ -55,9 +54,8 @@ namespace ApiModeloDDD.API.Controllers
         }
 
         /// <summary>
-        /// Obter uma importação específica por ID.
+        /// Retorna um produto específico por ID.
         /// </summary>
-        /// <param name="id">ID da importação.</param>
         /// <response code="200">A importação foi obtido com sucesso.</response>
         /// <response code="400">Não foi encontrada importação com ID especificado.</response>
         [HttpGet]
