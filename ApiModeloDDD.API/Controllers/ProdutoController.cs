@@ -66,8 +66,7 @@ namespace ApiModeloDDD.API.Controllers
         {
             try
             {
-                _applicationServiceProduto.GetImportacao(Id);
-                return new ObjectResult("OK") { StatusCode = 200 };
+                return new ObjectResult(_applicationServiceProduto.GetImportacao(Id));
             }
             catch (Exception ex)
             {

@@ -52,8 +52,16 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
         {
             try
             {
-                var sql = $@"
-                
+                var sql = $@"SELECT  [id]
+                                    ,[descricao]
+                                    ,[dataImportacao]
+                                    ,[dataEntrega]
+                                    ,[quantidade]
+                                    ,[valorUnitario]
+                                    ,[valorTotal]
+                                    ,[ativo]
+                                FROM [dbo].[Produtos]
+                                WHERE [id] = @Id
                 ";
 
                 using (var conexao = new SqlConnection(GetConnection))
