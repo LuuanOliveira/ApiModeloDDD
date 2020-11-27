@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ApiModeloDDD.Domain.Core\ApiModeloDDD.Domain.Core.csproj" />
   </ItemGroup>
 
