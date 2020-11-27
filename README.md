@@ -3,6 +3,8 @@ API .NET CORE 3.1 utilizando conceitos de DDD (Domain-Driven Design)
 
 ## :page_facing_up: Exemplo:
 
+![Alt text](https://github.com/LuuanOliveira/ApiModeloDDD/blob/master/ApiModeloDDD.API/Image/swagger.png)
+
 ## 🛠️ Construção:
 
 * [Swagger] - Documentação
