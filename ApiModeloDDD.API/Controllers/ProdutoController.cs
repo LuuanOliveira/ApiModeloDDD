@@ -16,7 +16,7 @@ namespace ApiModeloDDD.API.Controllers
         }
 
         /// <summary>
-        /// Realizar uma importação.
+        /// Realiza uma importação.
         /// </summary>
         /// <param name="importar">Modelo de importação.</param>
         /// <response code="200">Importação realizada com sucesso.</response>
@@ -46,8 +46,7 @@ namespace ApiModeloDDD.API.Controllers
         {
             try
             {
-                _applicationServiceProduto.GetImportacoes();
-                return new ObjectResult("OK") { StatusCode = 200 };
+                return new ObjectResult(_applicationServiceProduto.GetImportacoes());
             }
             catch (Exception ex)
             {

@@ -22,16 +22,25 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
         {
             try
             {
-                var sql = $@"
-
+                var sql = $@"SELECT  [id]
+                                    ,[dataImportacao]
+                                    ,[dataEntrega]
+                                    ,[quantidade]
+                                    ,[valorTotal]
+                                    ,[ativo]
+                             FROM [dbo].[Produtos]
                 ";
 
                 using (var conexao = new SqlConnection(GetConnection))
                 {
                     conexao.Open();
-                    var produtos = conexao.Query<Produto>(string.Format(sql)).ToList();
+                    var produtos = conexao.Query<Produto>(sql).ToList();
                     conexao.Close();
-                    return produtos;
+
+                    if (produtos.Count > 0)
+                        return produtos;
+                    else
+                        throw new Exception("Nenhum produto encontrado");
                 }
             }
             catch (Exception ex)
