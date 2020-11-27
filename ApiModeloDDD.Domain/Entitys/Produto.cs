@@ -13,7 +13,7 @@ namespace ApiModeloDDD.Domain.Entitys
         //public string nomeProduto { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
-        [Range(1, 50)]
+        [StringLength(50)]
         public string descricao { get; set; }
 
         //[Required(ErrorMessage = "Este campo é obrigatório")]
@@ -34,7 +34,6 @@ namespace ApiModeloDDD.Domain.Entitys
         //[Range(1, int.MaxValue, ErrorMessage = "O valor deve ser maior que zero")]
         public decimal? valorTotal { get; set; }
 
-        [Required(ErrorMessage = "Este campo é obrigatório")]
         public bool ativo { get; set; }
     }
 }
