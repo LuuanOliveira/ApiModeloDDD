@@ -18,7 +18,7 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
             _sqlContext = sqlContext;
         }
 
-        public IEnumerable<Produto> GetImportacoes()
+        public IEnumerable<ResumoProduto> GetImportacoes()
         {
             try
             {
@@ -29,12 +29,13 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
                                     ,[valorTotal]
                                     ,[ativo]
                              FROM [dbo].[Produtos]
+                             ORDER BY [dataEntrega] ASC
                 ";
 
                 using (var conexao = new SqlConnection(GetConnection))
                 {
                     conexao.Open();
-                    var produtos = conexao.Query<Produto>(sql).ToList();
+                    var produtos = conexao.Query<ResumoProduto>(sql).ToList();
                     conexao.Close();
 
                     if (produtos.Count > 0)

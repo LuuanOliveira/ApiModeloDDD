@@ -7,7 +7,7 @@ namespace ApiModeloDDD.Domain.Core.Interfaces.Repositorys
     public interface IProdutoRepository /*: IRepository<Produto>*/
     {
         //void Importar(Produto produto);
-        IEnumerable<Produto> GetImportacoes();
+        IEnumerable<ResumoProduto> GetImportacoes();
         Produto GetImportacao(Guid Id);
     }
 }

@@ -57,7 +57,7 @@ namespace ApiModeloDDD.API.Controllers
         /// Retorna um produto específico por ID.
         /// </summary>
         /// <response code="200">A importação foi obtido com sucesso.</response>
-        /// <response code="400">Não foi encontrada importação com ID especificado.</response>
+        /// <response code="404">Não foi encontrada importação com ID especificado.</response>
         [HttpGet]
         [Route("GetImportacao")]
         public IActionResult GetImportacao(Guid Id)
@@ -68,7 +68,7 @@ namespace ApiModeloDDD.API.Controllers
             }
             catch (Exception ex)
             {
-                return new ObjectResult(ex.Message) { StatusCode = 400 };
+                return new ObjectResult(ex.Message) { StatusCode = 404 };
             }
         }
     }

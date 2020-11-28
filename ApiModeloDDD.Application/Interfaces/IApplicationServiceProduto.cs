@@ -8,7 +8,7 @@ namespace ApiModeloDDD.Application.Interfaces
     public interface IApplicationServiceProduto
     {
         //void Importar(Produto produto);
-        IEnumerable<Produto> GetImportacoes();
+        IEnumerable<ResumoProduto> GetImportacoes();
         Produto GetImportacao(Guid Id);
     }
 }

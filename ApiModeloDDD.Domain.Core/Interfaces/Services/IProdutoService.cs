@@ -7,7 +7,7 @@ namespace ApiModeloDDD.Domain.Core.Interfaces.Services
     public interface IProdutoService
     {
         //void Importar(Produto produto);
-        IEnumerable<Produto> GetImportacoes();
+        IEnumerable<ResumoProduto> GetImportacoes();
         Produto GetImportacao(Guid Id);
     }
 }
