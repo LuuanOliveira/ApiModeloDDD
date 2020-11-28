@@ -1,7 +1,9 @@
 ﻿using ApiModeloDDD.Application.Interfaces;
 using ApiModeloDDD.Domain.Entitys;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading.Tasks;
 
 namespace ApiModeloDDD.API.Controllers
 {
@@ -22,11 +24,14 @@ namespace ApiModeloDDD.API.Controllers
         /// <response code="400">O modelo da importação enviado é inválido.</response>
         [HttpPost]
         [Route("Importar")]
-        public IActionResult ImportarProduto([FromBody] Produto produto)
+        public async Task<IActionResult> ImportarProduto(IFormFile file)
         {
             try
             {
-                return new ObjectResult("OK") { StatusCode = 200 };
+                if (file == null || file.Length == 0)
+                    throw new Exception("Arquivo inválido");
+                else
+                    return new ObjectResult("Importados: " + await _applicationServiceProduto.Importar(file));
             }
             catch (Exception ex)
             {
