@@ -13,6 +13,7 @@ API .NET CORE 3.1 utilizando conceitos de DDD (Domain-Driven Design)
 * [Dapper] - ORM
 * [IOC] - Injeção de dependência
 * [SQL Server] - Banco de dados
+* [EPPlus] - Manipulação do excel
 
 ## :wrench: Util:
 
