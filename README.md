@@ -18,11 +18,11 @@ API .NET CORE 3.1 utilizando conceitos de DDD (Domain-Driven Design)
 
 CREATE TABLE [Produtos](
 	[id] [uniqueidentifier] NOT NULL,
-	[descricao] [varchar](50) NOT NULL,
-	[dataImportacao] [datetime] NOT NULL,
 	[dataEntrega] [datetime] NOT NULL,
+	[descricao] [varchar](50) NOT NULL,
 	[quantidade] [int] NOT NULL,
 	[valorUnitario] [decimal](8,2) NOT NULL,
+	[dataImportacao] [datetime] NOT NULL,
 	[valorTotal] [decimal](8,2) NOT NULL,
 	[ativo] [bit] NOT NULL,
 PRIMARY KEY CLUSTERED 
