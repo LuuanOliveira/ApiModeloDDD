@@ -4,7 +4,7 @@ CREATE TABLE [Produtos](
 	[descricao] [varchar](50) NOT NULL,
 	[quantidade] [int] NOT NULL,
 	[valorUnitario] [decimal](8,2) NOT NULL,
-	[dataImportacao] [datetime] NOT NULL,
+	[dataImportacao] [datetime] NULL,
 	[valorTotal] [decimal](8,2) NOT NULL,
 	[ativo] [bit] NOT NULL,
 PRIMARY KEY CLUSTERED 

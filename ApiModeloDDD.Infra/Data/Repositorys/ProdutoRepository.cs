@@ -45,11 +45,11 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
                                 {
                                     if (coluna == 1)
                                         produto.dataEntrega = Convert.ToDateTime(package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString());
-                                    if (coluna == 2)
+                                    else if (coluna == 2)
                                         produto.descricao = package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString();
-                                    if (coluna == 3)
+                                    else if (coluna == 3)
                                         produto.quantidade = Convert.ToInt32(package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString());
-                                    if (coluna == 4)
+                                    else
                                         produto.valorUnitario = Convert.ToDecimal(package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString());
                                 }
                                 listaProdutos.Add(produto);

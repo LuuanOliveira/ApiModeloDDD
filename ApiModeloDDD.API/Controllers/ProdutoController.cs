@@ -28,10 +28,8 @@ namespace ApiModeloDDD.API.Controllers
         {
             try
             {
-                if (file == null || file.Length == 0)
-                    throw new Exception("Arquivo inválido");
-                else
-                    return new ObjectResult("Importados: " + await _applicationServiceProduto.Importar(file));
+                await _applicationServiceProduto.Importar(file);
+                return new ObjectResult("Importação realizada");
             }
             catch (Exception ex)
             {
