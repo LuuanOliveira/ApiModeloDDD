@@ -8,7 +8,7 @@ namespace ApiModeloDDD.Domain.Core.Interfaces.Repositorys
 {
     public interface IProdutoRepository /*: IRepository<Produto>*/
     {
-        Task<Produto> Importar(IFormFile file);
+        void Importar(IFormFile file);
         IEnumerable<ResumoProduto> GetImportacoes();
         Produto GetImportacao(Guid Id);
     }

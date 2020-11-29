@@ -22,11 +22,10 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
             _sqlContext = sqlContext;
         }
 
-        public async Task<Produto> Importar(IFormFile file)
+        public async void Importar(IFormFile file)
         {
             try
             {
-                var produto = new Produto();
                 var listaProdutos = new List<Produto>();
 
                 using (var memoryStream = new MemoryStream())
@@ -41,6 +40,8 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
                             var totalCollumns = package.Workbook.Worksheets[i].Dimension?.Columns;
                             for (int linha = 2; linha <= totalRows.Value; linha++)
                             {
+                                var produto = new Produto();
+
                                 for (int coluna = 1; coluna <= totalCollumns.Value; coluna++)
                                 {
                                     if (coluna == 1)
@@ -90,7 +91,6 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
                                 conexao.Close();
                             }
                         }
-                        return produto;
                     }
                 }
             }

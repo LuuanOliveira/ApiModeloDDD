@@ -24,11 +24,11 @@ namespace ApiModeloDDD.API.Controllers
         /// <response code="400">O modelo da importação enviado é inválido.</response>
         [HttpPost]
         [Route("Importar")]
-        public async Task<IActionResult> ImportarProduto(IFormFile file)
+        public IActionResult ImportarProduto(IFormFile file)
         {
             try
             {
-                await _applicationServiceProduto.Importar(file);
+                _applicationServiceProduto.Importar(file);
                 return new ObjectResult("Importação realizada");
             }
             catch (Exception ex)

@@ -9,7 +9,7 @@ namespace ApiModeloDDD.Application.Interfaces
 {
     public interface IApplicationServiceProduto
     {
-        Task<Produto> Importar(IFormFile file);
+        void Importar(IFormFile file);
         IEnumerable<ResumoProduto> GetImportacoes();
         Produto GetImportacao(Guid Id);
     }

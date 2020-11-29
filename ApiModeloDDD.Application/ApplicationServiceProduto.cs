@@ -17,7 +17,7 @@ namespace ApiModeloDDD.Application
 
         public ApplicationServiceProduto(IProdutoRepository produtoRepository) => _produtoRepository = produtoRepository;
 
-        public Task<Produto> Importar(IFormFile file) => _produtoRepository.Importar(file);
+        public void Importar(IFormFile file) => _produtoRepository.Importar(file);
         public IEnumerable<ResumoProduto> GetImportacoes() => _produtoRepository.GetImportacoes();
         public Produto GetImportacao(Guid Id) => _produtoRepository.GetImportacao(Id);
     }

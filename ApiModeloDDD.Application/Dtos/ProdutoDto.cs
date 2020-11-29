@@ -10,7 +10,7 @@ namespace ApiModeloDDD.Application.Dtos
 
         public string descricao { get; set; }
 
-        public DateTime? dataImportacao { get; set; }
+        public DateTime dataImportacao { get; set; }
 
         public DateTime dataEntrega { get; set; }
 
@@ -18,7 +18,7 @@ namespace ApiModeloDDD.Application.Dtos
 
         public decimal valorUnitario { get; set; }
 
-        public decimal? valorTotal { get; set; }
+        public decimal valorTotal { get; set; }
 
         public bool ativo { get; set; }
     }
