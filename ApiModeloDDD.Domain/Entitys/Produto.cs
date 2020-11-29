@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ApiModeloDDD.Domain.Entitys
@@ -9,16 +8,12 @@ namespace ApiModeloDDD.Domain.Entitys
         [Key]
         public Guid id { get; set; }
 
-        //[Required(ErrorMessage = "Este campo é obrigatório")]
-        //[Range(1, 30)]
-        //public string nomeProduto { get; set; }
-
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [StringLength(50)]
         public string descricao { get; set; }
 
-        //[Required(ErrorMessage = "Este campo é obrigatório")]
-        public DateTime? dataImportacao { get; set; }
+        [Required(ErrorMessage = "Este campo é obrigatório")]
+        public DateTime dataImportacao { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public DateTime dataEntrega { get; set; }
@@ -31,10 +26,10 @@ namespace ApiModeloDDD.Domain.Entitys
         [Range(1, int.MaxValue, ErrorMessage = "O valor deve ser maior que zero")]
         public decimal valorUnitario { get; set; }
 
-        //[Required(ErrorMessage = "Este campo é obrigatório")]
-        //[Range(1, int.MaxValue, ErrorMessage = "O valor deve ser maior que zero")]
-        public decimal? valorTotal { get; set; }
+        [Required(ErrorMessage = "Este campo é obrigatório")]
+        public decimal valorTotal { get; set; }
 
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         public bool ativo { get; set; }
     }
 }
