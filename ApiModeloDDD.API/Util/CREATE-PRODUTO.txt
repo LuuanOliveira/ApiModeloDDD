@@ -14,7 +14,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[Produtos] ADD CONSTRAINT [pd_Id]  DEFAULT (newid()) FOR [id]
+ALTER TABLE [dbo].[Produtos] ADD DEFAULT (newid()) FOR [id]
 GO
 
 ALTER TABLE [dbo].[Produtos] ADD DEFAULT (getdate()) FOR [dataImportacao]
