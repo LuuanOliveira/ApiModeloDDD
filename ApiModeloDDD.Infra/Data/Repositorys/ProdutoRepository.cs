@@ -45,13 +45,33 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
                                 for (int coluna = 1; coluna <= totalCollumns.Value; coluna++)
                                 {
                                     if (coluna == 1)
-                                        produto.dataEntrega = Convert.ToDateTime(package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString());
+                                    {
+                                        if (Convert.ToDateTime(package.Workbook.Worksheets[i].Cells[linha, coluna].Value) <= DateTime.Now)
+                                            throw new Exception("A data de entrega não deve ser menor ou igual a data atual");
+                                        else
+                                            produto.dataEntrega = Convert.ToDateTime(package.Workbook.Worksheets[i].Cells[linha, coluna].Value);
+                                    }
                                     else if (coluna == 2)
-                                        produto.descricao = package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString();
+                                    {
+                                        if (package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString().Length > 50)
+                                            throw new Exception("A descrição não pode ser maior que 50");
+                                        else
+                                            produto.descricao = package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString();
+                                    }
                                     else if (coluna == 3)
-                                        produto.quantidade = Convert.ToInt32(package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString());
+                                    {
+                                        if (Convert.ToInt32(package.Workbook.Worksheets[i].Cells[linha, coluna].Value) < 0)
+                                            throw new Exception("A quantidade deve ser maior que 0");
+                                        else
+                                            produto.quantidade = Convert.ToInt32(package.Workbook.Worksheets[i].Cells[linha, coluna].Value);
+                                    }
                                     else
-                                        produto.valorUnitario = Convert.ToDecimal(package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString());
+                                    {
+                                        if (Convert.ToDecimal(package.Workbook.Worksheets[i].Cells[linha, coluna].Value) < 0)
+                                            throw new Exception("A valor unitário deve ser maior que 0");
+                                        else
+                                            produto.valorUnitario = Convert.ToDecimal(package.Workbook.Worksheets[i].Cells[linha, coluna].Value);
+                                    }
                                 }
                                 listaProdutos.Add(produto);
                             }
