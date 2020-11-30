@@ -11,17 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{38ED2543-F84F-4119-9F1C-EFADFC7C1534}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModeloDDD.API", "ApiModeloDDD.API\ApiModeloDDD.API.csproj", "{78C572CF-BD49-48D2-B912-73163262279E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModeloDDD.API", "ApiModeloDDD.API\ApiModeloDDD.API.csproj", "{78C572CF-BD49-48D2-B912-73163262279E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModeloDDD.Application", "ApiModeloDDD.Application\ApiModeloDDD.Application.csproj", "{6FB75AC3-06CA-4458-B766-F16A182A650D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModeloDDD.Application", "ApiModeloDDD.Application\ApiModeloDDD.Application.csproj", "{6FB75AC3-06CA-4458-B766-F16A182A650D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModeloDDD.Domain", "ApiModeloDDD.Domain\ApiModeloDDD.Domain.csproj", "{0D04BAFC-7F8C-4296-A868-DFAB2C6E68C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModeloDDD.Domain", "ApiModeloDDD.Domain\ApiModeloDDD.Domain.csproj", "{0D04BAFC-7F8C-4296-A868-DFAB2C6E68C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModeloDDD.Domain.Core", "ApiModeloDDD.Domain.Core\ApiModeloDDD.Domain.Core.csproj", "{953E17DE-D48A-409D-A0C6-2A90D4B27EC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModeloDDD.Domain.Core", "ApiModeloDDD.Domain.Core\ApiModeloDDD.Domain.Core.csproj", "{953E17DE-D48A-409D-A0C6-2A90D4B27EC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModeloDDD.Domain.Services", "ApiModeloDDD.Domain.Services\ApiModeloDDD.Domain.Services.csproj", "{00B998CA-C47A-4D12-A44E-94A6C169F3FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModeloDDD.Domain.Services", "ApiModeloDDD.Domain.Services\ApiModeloDDD.Domain.Services.csproj", "{00B998CA-C47A-4D12-A44E-94A6C169F3FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModeloDDD.Infra", "ApiModeloDDD.Infra\ApiModeloDDD.Infra.csproj", "{624A5EA6-B838-4349-A41E-0BB0A35B371E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModeloDDD.Infra", "ApiModeloDDD.Infra\ApiModeloDDD.Infra.csproj", "{624A5EA6-B838-4349-A41E-0BB0A35B371E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModeloDDD.Domain.Test", "ApiModeloDDD.Domain.Test\ApiModeloDDD.Domain.Test.csproj", "{60FAEAA8-1648-4062-9D71-19320DB0D300}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{624A5EA6-B838-4349-A41E-0BB0A35B371E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{624A5EA6-B838-4349-A41E-0BB0A35B371E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{624A5EA6-B838-4349-A41E-0BB0A35B371E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60FAEAA8-1648-4062-9D71-19320DB0D300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60FAEAA8-1648-4062-9D71-19320DB0D300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60FAEAA8-1648-4062-9D71-19320DB0D300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60FAEAA8-1648-4062-9D71-19320DB0D300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{953E17DE-D48A-409D-A0C6-2A90D4B27EC1} = {B689113A-A0FF-4153-AA02-01A1A63C75A1}
 		{00B998CA-C47A-4D12-A44E-94A6C169F3FC} = {B689113A-A0FF-4153-AA02-01A1A63C75A1}
 		{624A5EA6-B838-4349-A41E-0BB0A35B371E} = {38ED2543-F84F-4119-9F1C-EFADFC7C1534}
+		{60FAEAA8-1648-4062-9D71-19320DB0D300} = {B689113A-A0FF-4153-AA02-01A1A63C75A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3BA2EF9-866D-4FBC-B774-064E8408C2FB}
