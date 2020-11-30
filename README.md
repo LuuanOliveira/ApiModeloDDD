@@ -19,6 +19,10 @@ API .NET CORE 3.1 utilizando conceitos de DDD (Domain-Driven Design)
 
 * **Script** - [SQL](https://github.com/LuuanOliveira/ApiModeloDDD/blob/master/ApiModeloDDD.API/Util/CREATE-PRODUTO.txt)
 
+## :memo: Test:
+
+* **xUnit** - [Testes unitários](https://github.com/LuuanOliveira/ApiModeloDDD/blob/master/ApiModeloDDD.Domain.Test/Test/Test.cs)
+
 ## ✒️ Autor:
 
 * **Desenvolvedor** - [Luan Oliveira](https://github.com/LuuanOliveira)
