@@ -12,5 +12,6 @@ namespace ApiModeloDDD.Application.Interfaces
         void Importar(IFormFile file);
         IEnumerable<ResumoProduto> GetImportacoes();
         Produto GetImportacao(Guid Id);
+        void AtualizarProduto(Produto produto);
     }
 }

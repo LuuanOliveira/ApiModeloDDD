@@ -74,5 +74,25 @@ namespace ApiModeloDDD.API.Controllers
                 return new ObjectResult(ex.Message) { StatusCode = 404 };
             }
         }
+
+        /// <summary>
+        /// Atualiza um produto específico por ID.
+        /// </summary>
+        /// <response code="200">Atualização realizada com sucesso.</response>
+        /// <response code="400">Não foi possível atualizar produto com ID especificado.</response>
+        [HttpPut]
+        [Route("Atualizar")]
+        public IActionResult AtualizarProduto([FromBody] Produto produto)
+        {
+            try
+            {
+                _applicationServiceProduto.AtualizarProduto(produto);
+                return new ObjectResult("Atualização realizada");
+            }
+            catch (Exception ex)
+            {
+                return new ObjectResult(ex.Message) { StatusCode = 404 };
+            }
+        }
     }
 }

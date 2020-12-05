@@ -46,31 +46,31 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
                                 {
                                     if (coluna == 1)
                                     {
-                                        if (Convert.ToDateTime(package.Workbook.Worksheets[i].Cells[linha, coluna].Value) <= DateTime.Now)
-                                            throw new Exception("A data de entrega não deve ser menor ou igual a data atual");
-                                        else
+                                        if (Validador(null, Convert.ToDateTime(package.Workbook.Worksheets[i].Cells[linha, coluna].Value)))
                                             produto.dataEntrega = Convert.ToDateTime(package.Workbook.Worksheets[i].Cells[linha, coluna].Value);
+                                        else
+                                            throw new Exception("A data de entrega não deve ser menor ou igual a data atual");
                                     }
                                     else if (coluna == 2)
                                     {
-                                        if (package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString().Length > 50)
-                                            throw new Exception("A descrição não pode ser maior que 50");
-                                        else
+                                        if (Validador(package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString()))
                                             produto.descricao = package.Workbook.Worksheets[i].Cells[linha, coluna].Value.ToString();
+                                        else
+                                            throw new Exception("A descrição não pode ser maior que 50");
                                     }
                                     else if (coluna == 3)
                                     {
-                                        if (Convert.ToInt32(package.Workbook.Worksheets[i].Cells[linha, coluna].Value) < 0)
-                                            throw new Exception("A quantidade deve ser maior que 0");
-                                        else
+                                        if (Validador(null, null, Convert.ToInt32(package.Workbook.Worksheets[i].Cells[linha, coluna].Value)))
                                             produto.quantidade = Convert.ToInt32(package.Workbook.Worksheets[i].Cells[linha, coluna].Value);
+                                        else
+                                            throw new Exception("A quantidade deve ser maior que 0");
                                     }
                                     else
                                     {
-                                        if (Convert.ToDecimal(package.Workbook.Worksheets[i].Cells[linha, coluna].Value) < 0)
-                                            throw new Exception("A valor unitário deve ser maior que 0");
-                                        else
+                                        if (Validador(null, null, null, Convert.ToDecimal(package.Workbook.Worksheets[i].Cells[linha, coluna].Value)))
                                             produto.valorUnitario = Convert.ToDecimal(package.Workbook.Worksheets[i].Cells[linha, coluna].Value);
+                                        else
+                                            throw new Exception("A valor unitário deve ser maior que 0");
                                     }
                                 }
                                 listaProdutos.Add(produto);
@@ -177,6 +177,71 @@ namespace ApiModeloDDD.Infra.Data.Repositorys
                     else
                         throw new Exception("Nenhum produto encontrado");
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public void AtualizarProduto(Produto produto)
+        {
+            try
+            {
+                if (Validador(produto.descricao
+                             ,produto.dataEntrega
+                             ,produto.quantidade
+                             ,produto.valorUnitario))
+                {
+                    produto.valorTotal = (produto.valorUnitario * produto.quantidade);
+
+                    var sql = $@"UPDATE [dbo].[Produtos]
+                               SET [dataEntrega] = @dataEntrega
+                                  ,[descricao] = @descricao
+                                  ,[quantidade] = @quantidade
+                                  ,[valorUnitario] = @valorUnitario
+                                  ,[valorTotal] = @valorTotal
+                                  ,[ativo] = @ativo
+                            WHERE [id] = @Id
+                    ";
+
+                    using (var conexao = new SqlConnection(GetConnection))
+                    {
+                        conexao.Open();
+                        conexao.Execute(sql, produto);
+                        conexao.Close();
+                    }
+                }
+                else
+                    throw new Exception("Revise os campos para atualizar o produto");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        private bool Validador(string descricao, DateTime? dataEntrega = null, int? quantidade = null, decimal? valorUnitario = null)
+        {
+            try
+            {
+                var isValido = true;
+
+                if (dataEntrega != null)
+                    if (dataEntrega <= DateTime.Now)
+                        isValido = false;
+
+                if (!string.IsNullOrEmpty(descricao))
+                    if (descricao.Length > 50)
+                        isValido = false;
+
+                if (quantidade != null)
+                    if (quantidade < 0)
+                        isValido = false;
+
+                if (valorUnitario != null)
+                    if (valorUnitario < 0)
+                        isValido = false;
+
+                return isValido;
             }
             catch (Exception ex)
             {

@@ -20,5 +20,6 @@ namespace ApiModeloDDD.Application
         public void Importar(IFormFile file) => _produtoRepository.Importar(file);
         public IEnumerable<ResumoProduto> GetImportacoes() => _produtoRepository.GetImportacoes();
         public Produto GetImportacao(Guid Id) => _produtoRepository.GetImportacao(Id);
+        public void AtualizarProduto(Produto produto) => _produtoRepository.AtualizarProduto(produto);
     }
 }
