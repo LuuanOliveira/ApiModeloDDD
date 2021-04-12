@@ -29,4 +29,4 @@ API .NET CORE 3.1 utilizando conceitos de DDD (Domain-Driven Design)
 * Não há nada que uma boa dose de criatividade não resolva 📢
 
 ---
-console.log(alert('Developer by 💙'));
+alert('Developer by 💙');
